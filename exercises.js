@@ -4,10 +4,12 @@
 let arrays = [[1, 2, 3], [4, 5], [6]];
 // Your code here.
 //reduce method iterates over each element in the arrays array and accumuates the result into one value
+export default function flatArray() {
 let flattenedArray = arrays.reduce((accumulatedResult, arrayofArrays) => {
     //concatenates the arrayofArrays to the accumulatedResult and returns a new array
     return accumulatedResult.concat(arrayofArrays);
 })
+}
 //prints the new flattened array to the console
 console.log(flattenedArray)
 // → [1, 2, 3, 4, 5, 6]
@@ -23,7 +25,7 @@ console.log(flattenedArray)
 //testFunction continues the loop if it returns true and stops the loop if it returns false
 //updateFunction generates a new value for the next iteration
 //bodyFunction is called for each iteration with the current value
-function loop(value, testFunction, updateFunction, bodyFunction) {
+export default function loop(value, testFunction, updateFunction, bodyFunction) {
     while (testFunction(value)) { //continues iterating if testFunction is true
         bodyFunction(value); //updates the value
         value = updateFunction(value); //loop continues until it becomes false
@@ -40,7 +42,7 @@ loop(3, n=> n > 0, n => n - 1, console.log);
 
 Implement two versions of every (everySome and everyLoop) as a function that takes an array and a predicate function as parameters. Write two versions, one using a loop and one using the some method.*/
 
-function everyLoop(array, test) 
+export default function everyLoop(array, test) 
 {
   // Your code here.
   //for of loop to iterate through elements of the array
@@ -60,7 +62,7 @@ console.log(everyLoop([2, 4, 16], n => n < 10));
 console.log(everyLoop([], n => n < 10));
 // → true
 
-function everySome(array, test) 
+export default function everySome(array, test) 
 {
 // Your code here.
 //some method checks if there's an element in the array that doesn't satisfy the test function
